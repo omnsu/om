@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Фонд помощи «Одинокие мамы»</title>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light;--bg:#fafaf7;--surface:#fff;--ink:#22302b;--muted:#6b7a74;--sage:#7fb5a3;--deep:#2f7d6b;--soft:#e4f3ed;--rose:#fde6dc;--line:#edf1ee;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font:400 16px/1.6 Manrope,system-ui,sans-serif}
+h1,h2,h3{font-family:Lora,Georgia,serif;font-weight:600;line-height:1.2;margin:0}
+.app{display:grid;grid-template-columns:260px 1fr;min-height:100vh}
+aside{position:sticky;top:0;height:100vh;padding:28px 20px;background:var(--surface);border-right:1px solid var(--line);display:flex;flex-direction:column;gap:28px}
+.brand{all:unset;cursor:pointer;display:flex;align-items:center;gap:12px;font-family:Lora,Georgia,serif;font-weight:600;font-size:19px;line-height:1.15;color:var(--ink)}
+.brand svg{flex:none}
+nav{display:flex;flex-direction:column;gap:8px}
+nav button{font:500 16px Manrope,sans-serif;text-align:left;padding:14px 16px;border:0;border-radius:14px;background:transparent;color:var(--ink);cursor:pointer;display:flex;gap:12px;align-items:center;transition:background .2s}
+nav button:hover{background:var(--soft)}
+nav button[aria-current="page"]{background:var(--deep);color:#fff}
+button:focus-visible,a:focus-visible{outline:3px solid var(--sage);outline-offset:2px}
+main{padding:48px clamp(20px,5vw,64px) 40px;max-width:1100px;width:100%}
+section[hidden]{display:none}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(32px,4.4vw,52px);margin-bottom:18px}
+.lead{font-size:18px;color:var(--muted);max-width:52ch;margin:0}
+.hero-art{background:var(--soft);border-radius:36px 36px 120px 36px;aspect-ratio:1/1;display:grid;place-items:center;overflow:hidden}
+h2.title{font-size:clamp(26px,3vw,34px);margin:56px 0 20px}
+.offers{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.offer{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:24px}
+.offer:nth-child(2){background:var(--rose);border-color:transparent}
+.offer h3{font-size:20px;margin:14px 0 8px}
+.offer p{margin:0;color:var(--muted)}
+.offer:nth-child(2) p{color:var(--ink)}
+.ico{width:44px;height:44px;border-radius:14px;background:var(--soft);display:grid;place-items:center;color:var(--deep)}
+.offer:nth-child(2) .ico{background:rgba(255,255,255,.6)}
+.about{margin-top:20px;max-width:68ch;color:var(--muted)}
+.contacts{margin-top:56px;padding:28px;border-radius:24px;background:var(--deep);color:#fff;display:flex;flex-wrap:wrap;gap:20px 48px;align-items:center;justify-content:space-between}
+.contacts h3{font-size:22px}
+.contacts a{color:inherit;font-weight:700;font-size:18px;text-decoration:none;border-bottom:2px solid currentColor;opacity:.95}
+.contacts div{display:flex;flex-direction:column;gap:6px}
+.contacts span{font-size:14px;opacity:.8}
+.page-head p{color:var(--muted);margin:10px 0 0;max-width:60ch}
+.page-head h2{font-size:clamp(28px,3.4vw,38px)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px;margin-top:32px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:22px;display:flex;flex-direction:column;gap:14px}
+.who{display:flex;gap:16px;align-items:center}
+.who svg{width:84px;height:84px;border-radius:50%;flex:none}
+.who h3{font-size:20px}
+.who small{color:var(--muted);font-size:14px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{background:var(--soft);color:var(--deep);font-size:13px;font-weight:700;padding:4px 12px;border-radius:99px}
+dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:15px}
+dt{color:var(--muted)}dd{margin:0}
+.review{margin:0;padding:14px 16px;border-radius:16px;background:var(--bg);font-size:15px}
+.review cite{display:block;margin-top:6px;font-style:normal;font-size:13px;color:var(--muted)}
+.stars{color:#c9a16a;letter-spacing:2px;font-size:14px}
+.chat{display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center;margin-top:32px;background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:36px}
+.qr{width:240px;height:240px;background:#fff;border-radius:18px;padding:14px;border:1px solid var(--line)}
+.chat h3{font-size:24px;margin-bottom:10px}
+.chat p{color:var(--muted);margin:0 0 12px;max-width:48ch}
+.note{font-size:13px;background:var(--rose);color:var(--ink);padding:8px 12px;border-radius:10px;display:inline-block}
+@media (max-width:860px){
+.app{grid-template-columns:1fr}
+aside{position:sticky;top:0;z-index:5;height:auto;flex-direction:row;align-items:center;justify-content:space-between;padding:10px 12px;border-right:0;border-bottom:1px solid var(--line);flex-wrap:wrap;gap:8px}
+.brand span{display:none}
+nav{flex-direction:row;gap:4px;flex:1;justify-content:flex-end}
+nav button{padding:10px 12px;font-size:14px}nav button svg{display:none}
+.hero{grid-template-columns:1fr}.hero-art{max-width:320px;border-radius:30px 30px 90px 30px}
+.chat{grid-template-columns:1fr;justify-items:center;text-align:center;padding:24px}
+main{padding-top:28px}
+}
+@media (prefers-reduced-motion:no-preference){section:not([hidden]){animation:in .35s ease}@keyframes in{from{opacity:0}to{opacity:1}}}
+body,button,dl{font-family:Onest,system-ui,sans-serif}
+body{background:radial-gradient(900px 520px at 95% -5%,#e2f4ec 0,transparent 60%),radial-gradient(760px 520px at -5% 105%,#fdece3 0,transparent 60%),var(--bg);background-attachment:fixed}
+h1,h2,h3,.brand{font-family:Onest,system-ui,sans-serif;font-weight:600;letter-spacing:-.025em}
+aside{top:16px;margin:16px 0 16px 16px;height:calc(100vh - 32px);border:0;border-radius:32px;background:rgba(255,255,255,.75);backdrop-filter:blur(14px);box-shadow:0 20px 50px -24px rgba(47,125,107,.28)}
+nav button{border-radius:99px;font-weight:500;color:var(--muted)}
+nav button:hover{background:var(--soft);color:var(--deep)}
+nav button[aria-current="page"]{background:linear-gradient(135deg,#3b9680,#2f7d6b);color:#fff;box-shadow:0 10px 22px -10px rgba(47,125,107,.7)}
+.hero h1{font-size:clamp(36px,5vw,62px);letter-spacing:-.035em;line-height:1.05}
+.lead{font-size:19px}
+.hero-art{background:linear-gradient(140deg,#d6efe4,#fde6dc);border-radius:56px 56px 140px 56px}
+.offer,.card,.chat{border:0;border-radius:28px;box-shadow:0 1px 2px rgba(40,70,60,.05),0 18px 40px -22px rgba(40,70,60,.22)}
+.offer{background:#e4f3ed}.offer:nth-child(2){background:#fde6dc}.offer:nth-child(3){background:#e5eefb}
+.offer .ico,.offer:nth-child(2) .ico{background:#fff;color:var(--deep);box-shadow:0 6px 14px -8px rgba(40,70,60,.3)}
+.offer p,.offer:nth-child(2) p{color:#51615a}
+.contacts{background:linear-gradient(120deg,#2f7d6b,#58a690);border-radius:32px;color:#fff;box-shadow:0 24px 50px -26px rgba(47,125,107,.7)}
+.card{transition:transform .25s,box-shadow .25s}.card:hover{transform:translateY(-3px)}
+.who svg{box-shadow:0 0 0 4px #fff,0 8px 20px -6px rgba(40,70,60,.3)}
+.tag{background:#e4f3ed;color:#23665a}
+.review{background:#f5f9f7;border-radius:18px}
+.stars{color:#e0aa5e}
+.qr{border:0;box-shadow:0 14px 34px -18px rgba(40,70,60,.4)}
+.note{background:#fff1d9}
+@media (max-width:860px){aside{top:0;margin:0;height:auto;border-radius:0 0 24px 24px;background:rgba(255,255,255,.9)}.hero-art{border-radius:40px 40px 100px 40px}}
+body{background:radial-gradient(900px 520px at 95% -5%,#fbe3e0 0,transparent 60%),radial-gradient(760px 520px at -5% 105%,#f4e7d9 0,transparent 60%),var(--bg);background-attachment:fixed}
+aside{background:rgba(255,252,250,.8);box-shadow:0 20px 50px -26px rgba(150,100,90,.3)}
+nav button[aria-current="page"]{background:linear-gradient(135deg,#d08a92,#b9707a);box-shadow:0 10px 22px -10px rgba(185,112,122,.65)}
+.hero-art{background:linear-gradient(140deg,#f9dfdc,#f1e3d3)}
+.offer{background:#f9e4e1}.offer:nth-child(2){background:#f3e6d8}.offer:nth-child(3){background:#f7ede8}
+.offer .ico,.offer:nth-child(2) .ico{box-shadow:0 6px 14px -8px rgba(150,100,90,.35)}
+.offer p,.offer:nth-child(2) p{color:#75645f}
+.offer,.card,.chat{box-shadow:0 1px 2px rgba(120,80,70,.05),0 18px 40px -22px rgba(150,100,90,.28)}
+.contacts{background:linear-gradient(120deg,#b86a75,#d0939a);box-shadow:0 24px 50px -26px rgba(184,106,117,.6)}
+.tag{background:#f9e4e1;color:#9a5560}
+.review{background:#fbf3ef}
+.stars{color:#d9a15c}
+.who svg{box-shadow:0 0 0 4px #fff,0 8px 20px -6px rgba(150,100,90,.3)}
+.who svg>path:first-of-type{fill:#cf9a9a}
+.card:nth-child(odd) .who svg>rect:first-child{fill:#f8dedb}
+.card:nth-child(even) .who svg>rect:first-child{fill:#f2e4d4}
+.qr{box-shadow:0 14px 34px -18px rgba(150,100,90,.4)}
+.note{background:#f9e4e1}
+@media (max-width:860px){aside{background:rgba(255,252,250,.92)}}
+.acc{margin-top:auto;font:500 15px Onest,system-ui,sans-serif;padding:14px 16px;border:0;border-radius:99px;background:var(--soft);color:var(--deep);cursor:pointer;display:flex;gap:12px;align-items:center;transition:background .2s}
+.acc:hover{background:#f3d9d4}
+.acc[aria-current="page"]{background:linear-gradient(135deg,#d08a92,#b9707a);color:#fff;box-shadow:0 10px 22px -10px rgba(185,112,122,.65)}
+.panel{margin-top:32px;max-width:560px;background:var(--surface);border-radius:28px;padding:28px;box-shadow:0 1px 2px rgba(120,80,70,.05),0 18px 40px -22px rgba(150,100,90,.28)}
+.panel h3{font-size:22px;margin-bottom:18px}
+.tabs{display:flex;gap:6px;background:var(--soft);padding:5px;border-radius:99px;margin-bottom:22px}
+.tabs button{flex:1;border:0;border-radius:99px;padding:10px;font:500 15px Onest,system-ui,sans-serif;background:transparent;color:var(--muted);cursor:pointer}
+.tabs button[aria-pressed="true"]{background:#fff;color:var(--deep);box-shadow:0 4px 12px -6px rgba(150,100,90,.4)}
+label.f{display:block;margin-bottom:14px;font-size:14px;color:var(--muted);flex:1}
+label.f input{display:block;width:100%;margin-top:6px;padding:13px 16px;border:1.5px solid var(--line);border-radius:14px;background:#fffdfb;font:16px Onest,system-ui,sans-serif;color:var(--ink)}
+label.f input:focus{outline:none;border-color:var(--sage);box-shadow:0 0 0 4px rgba(217,165,165,.25)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.kid{display:flex;gap:8px;align-items:flex-end}
+.kid .x{flex:none;width:48px;height:48px;margin-bottom:14px;border:0;border-radius:14px;background:var(--soft);color:var(--deep);font-size:22px;cursor:pointer}
+.btn{font:600 16px Onest,system-ui,sans-serif;border:0;border-radius:99px;padding:14px 26px;background:linear-gradient(135deg,#d08a92,#b9707a);color:#fff;cursor:pointer;box-shadow:0 10px 22px -12px rgba(185,112,122,.7)}
+.btn.ghost{background:var(--soft);color:var(--deep);box-shadow:none}
+.btn.small{padding:10px 18px;font-size:14px;margin-bottom:18px}
+.acts{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.err{color:#b3404f;font-size:14px;min-height:20px;margin:6px 0 10px}
+.profile{display:flex;gap:16px;align-items:center;margin-bottom:22px}
+.profile h3{margin:0}.profile small{color:var(--muted)}
+.ava{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#f4c9c6,#e8cdb5);color:#9a5560;display:grid;place-items:center;font:600 22px Onest,system-ui,sans-serif}
+.pd{margin:0 0 24px;display:grid;grid-template-columns:auto 1fr;gap:0 24px}
+.pd dt,.pd dd{padding:12px 0;border-bottom:1px solid var(--line);margin:0}
+.pd dt{color:var(--muted)}
+@media (max-width:860px){.acc{margin:0;padding:10px 12px}.acc span{display:none}.panel{padding:20px}.row2{grid-template-columns:1fr}}
+body{background:radial-gradient(900px 520px at 95% -5%,#e2f4ec 0,transparent 60%),radial-gradient(760px 520px at -5% 105%,#fdece3 0,transparent 60%),var(--bg);background-attachment:fixed}
+aside{background:rgba(255,255,255,.75);box-shadow:0 20px 50px -24px rgba(47,125,107,.28)}
+nav button[aria-current="page"],.acc[aria-current="page"]{background:linear-gradient(135deg,#3b9680,#2f7d6b);box-shadow:0 10px 22px -10px rgba(47,125,107,.7)}
+.hero-art{background:linear-gradient(140deg,#d6efe4,#fde6dc)}
+.offer{background:#e4f3ed}.offer:nth-child(2){background:#fde6dc}.offer:nth-child(3){background:#e5eefb}
+.offer .ico,.offer:nth-child(2) .ico{box-shadow:0 6px 14px -8px rgba(40,70,60,.3)}
+.offer p,.offer:nth-child(2) p{color:#51615a}
+.offer,.card,.chat,.panel{box-shadow:0 1px 2px rgba(40,70,60,.05),0 18px 40px -22px rgba(40,70,60,.22)}
+.contacts{background:linear-gradient(120deg,#2f7d6b,#58a690);box-shadow:0 24px 50px -26px rgba(47,125,107,.7)}
+.tag{background:#e4f3ed;color:#23665a}
+.review{background:#f5f9f7}
+.stars{color:#e0aa5e}
+.who svg{box-shadow:0 0 0 4px #fff,0 8px 20px -6px rgba(40,70,60,.3)}
+.who svg>path:first-of-type{fill:#34554a}
+.card:nth-child(5n+1) .who svg>rect:first-child{fill:#cfe0d6}
+.card:nth-child(5n+2) .who svg>rect:first-child{fill:#e9cfc6}
+.card:nth-child(5n+3) .who svg>rect:first-child{fill:#d9e4dd}
+.card:nth-child(5n+4) .who svg>rect:first-child{fill:#e3ebe5}
+.card:nth-child(5n) .who svg>rect:first-child{fill:#f0ddd5}
+.qr{box-shadow:0 14px 34px -18px rgba(40,70,60,.4)}
+.note{background:#fff1d9}
+.acc:hover{background:#d3eadf}
+.tabs button[aria-pressed="true"]{box-shadow:0 4px 12px -6px rgba(40,70,60,.35)}
+label.f input{background:#fff}
+label.f input:focus{border-color:var(--sage);box-shadow:0 0 0 4px rgba(127,181,163,.25)}
+.btn{background:linear-gradient(135deg,#3b9680,#2f7d6b);box-shadow:0 10px 22px -12px rgba(47,125,107,.7)}
+.ava{background:linear-gradient(135deg,#cfe0d6,#e5eefb);color:#23665a}
+@media (max-width:860px){aside{background:rgba(255,255,255,.9)}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside>
+<button class="brand" data-go="home" aria-label="На главную">
+<svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="#8fa89a"/><circle cx="15" cy="14" r="4.5" fill="#fff"/><path d="M7 31c0-6 4-9 8-9s8 3 8 9z" fill="#fff"/><circle cx="27" cy="21" r="3" fill="#e9cfc6"/><path d="M22 33c0-4 2-6 5-6s5 2 5 6z" fill="#e9cfc6"/></svg>
+<span>Одинокие<br>мамы</span>
+</button>
+<nav aria-label="Разделы сайта">
+<button data-go="nanny"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="7" r="4"/><path d="M4 21c0-5 4-7 8-7s8 2 8 7"/></svg>Няни</button>
+<button data-go="men"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5a4 4 0 0 0-5 5L3 18l3 3 6.5-6.5a4 4 0 0 0 5-5l-2.5 2.5-2.5-.5-.5-2.5z"/></svg>Мужская помощь</button>
+<button data-go="chat"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.5 7.2L3 21l1.8-5.5A8 8 0 1 1 21 12z"/></svg>Чат</button>
+</nav>
+<button class="acc" data-go="account" aria-label="Личный кабинет"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><span id="accLabel">Войти</span></button>
+</aside>
+
+<main>
+<section id="home">
+<div class="hero">
+<div>
+<h1>Вы не одни. Мы рядом, когда нужна помощь.</h1>
+<p class="lead">Фонд «Одинокие мамы» помогает женщинам, которые одни растят детей: находит надёжных нянь, мастеров на все руки и объединяет мам в тёплое сообщество.</p>
+</div>
+<div class="hero-art" aria-hidden="true">
+<svg viewBox="0 0 300 300" width="100%" height="100%"><circle cx="150" cy="150" r="110" fill="#8fa89a" opacity=".35"/><circle cx="120" cy="115" r="30" fill="#f2dcd2"/><path d="M92 112c0-24 18-34 32-34s30 8 30 28c-12-8-34-10-62 6z" fill="#5d4a42"/><path d="M70 235c0-45 25-70 52-70s52 25 52 70z" fill="#34554a"/><circle cx="192" cy="160" r="19" fill="#f2dcd2"/><path d="M178 160c2-14 12-20 22-18 6 3 9 8 8 14-10-6-20-5-30 4z" fill="#5d4a42"/><path d="M160 235c0-26 14-40 32-40s32 14 32 40z" fill="#e9cfc6"/><path d="M215 105c0-9 14-9 14 0 0 8-14 16-14 16s-14-8-14-16c0-9 14-9 14 0z" fill="#d99a8c"/></svg>
+</div>
+</div>
+
+<h2 class="title">Что мы предлагаем</h2>
+<div class="offers">
+<div class="offer"><div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="7" r="4"/><path d="M4 21c0-5 4-7 8-7s8 2 8 7"/></svg></div><h3>Проверенные няни</h3><p>Студентки и опытные воспитатели, которые посидят с ребёнком, пока вы на работе или отдыхаете.</p></div>
+<div class="offer"><div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5a4 4 0 0 0-5 5L3 18l3 3 6.5-6.5a4 4 0 0 0 5-5l-2.5 2.5-2.5-.5-.5-2.5z"/></svg></div><h3>Мужская помощь</h3><p>Сантехник, электрик, мастер по мебели: волонтёры починят то, что в доме сломалось.</p></div>
+<div class="offer"><div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.5 7.2L3 21l1.8-5.5A8 8 0 1 1 21 12z"/></svg></div><h3>Общий чат</h3><p>Группа в мессенджере Max, где мамы делятся советами, вещами и поддержкой.</p></div>
+</div>
+<p class="about">Каждый помощник проходит знакомство с командой фонда. Помощь для мам бесплатная или по символической цене. Выберите нужный раздел слева или напишите нам.</p>
+
+<div class="contacts">
+<h3>Свяжитесь с нами</h3>
+<div><span>Телефон</span><a href="tel:+79830513297">8 983 051-32-97</a></div>
+<div><span>Почта</span><a href="mailto:mariamakaruhina@mail.ru">mariamakaruhina@mail.ru</a></div>
+</div>
+</section>
+
+<section id="nanny" hidden>
+<div class="page-head"><h2>Няни</h2><p>Пять помощниц, которым мы доверяем. Позвоните в фонд, и мы договоримся о встрече.</p></div>
+<div class="grid" id="nannyGrid"></div>
+</section>
+
+<section id="men" hidden>
+<div class="page-head"><h2>Мужская помощь</h2><p>Мастера-волонтёры, которые помогают по дому. У некоторых несколько специальностей.</p></div>
+<div class="grid" id="menGrid"></div>
+</section>
+
+<section id="chat" hidden>
+<div class="page-head"><h2>Чат</h2><p>Общайтесь с другими мамами и командой фонда.</p></div>
+<div class="chat">
+<svg class="qr" id="qr" viewBox="0 0 29 29" shape-rendering="crispEdges" role="img" aria-label="QR-код группы в Max"></svg>
+<div>
+<h3>Наша группа в Max</h3>
+<p>Наведите камеру телефона на QR-код и вступите в группу. Здесь мы делимся новостями фонда, ищем помощников и поддерживаем друг друга.</p>
+<span class="note">Это образец. Замените его вашим настоящим QR-кодом из Max.</span>
+</div>
+</div>
+</section>
+<section id="account" hidden>
+<div class="page-head"><h2>Личный кабинет</h2><p>Войдите или зарегистрируйтесь, чтобы фонд мог лучше подобрать помощь для вашей семьи.</p></div>
+<div class="panel" id="accBox"></div>
+</section>
+</main>
+</div>
+
+<script>
+var nannies=[
+{n:"Анна Соколова",age:22,exp:"3 года",edu:"Педагогический университет, 4 курс",skin:"#f2dcd2",hair:"#6b4a3a",bg:"#cfe0d6",rev:"Анна сразу нашла общий язык с сыном. Приходит вовремя, всегда на связи.",by:"Екатерина, мама Макара"},
+{n:"Ольга Миронова",age:34,exp:"10 лет",edu:"Колледж, воспитатель детского сада",skin:"#efd2c0",hair:"#3e2f2a",bg:"#e9cfc6",rev:"Оля очень спокойная и ласковая. Дочка просит, чтобы она приходила снова.",by:"Наталья, мама Софии"},
+{n:"Виктория Лебедева",age:20,exp:"1 год",edu:"Институт психологии, 2 курс",skin:"#f5e0d4",hair:"#a9744a",bg:"#d9e4dd",rev:"Играет и занимается с детьми по-настоящему. Мои двойняшки в восторге.",by:"Ирина, мама двойняшек"},
+{n:"Елена Крылова",age:41,exp:"15 лет",edu:"Медицинский колледж, детская медсестра",skin:"#e8c9b4",hair:"#8a8d91",bg:"#e3ebe5",rev:"С грудным ребёнком я доверила бы только её. Очень опытная и внимательная.",by:"Дарья, мама Миши"},
+{n:"Мария Иванова",age:23,exp:"2 года",edu:"Педагогический университет, магистратура",skin:"#f0d6c6",hair:"#2f2623",bg:"#f0ddd5",rev:"Помогает с уроками и водит на кружки. Сын стал учиться с удовольствием.",by:"Светлана, мама Данила"}];
+var men=[
+{n:"Дмитрий Орлов",age:38,jobs:["Сантехник","Отопление"],exp:"12 лет",edu:"Профессиональный лицей",skin:"#efd2c0",hair:"#4a3a30",bg:"#cfe0d6",rev:"Устранил течь за час и не взял денег. Спасибо за такую помощь.",by:"Алина, мама Тимура"},
+{n:"Сергей Волков",age:45,jobs:["Электрик","Мастер по бытовой технике"],exp:"20 лет",edu:"Энергетический техникум",skin:"#e8c9b4",hair:"#8a8d91",bg:"#e9cfc6",rev:"Починил проводку и стиральную машину за один визит. Объяснил всё понятно.",by:"Оксана, мама Лизы"},
+{n:"Андрей Козлов",age:31,jobs:["Сборка мебели","Мелкий ремонт","Плотник"],exp:"8 лет",edu:"Строительный колледж",skin:"#f2dcd2",hair:"#6b4a3a",bg:"#d9e4dd",rev:"Собрал детскую кроватку и шкаф и повесил полки. Аккуратный и вежливый.",by:"Юлия, мама Ромы"},
+{n:"Николай Попов",age:52,jobs:["Мастер по замкам","Дверные работы"],exp:"25 лет",edu:"Профессиональный лицей",skin:"#e8c9b4",hair:"#a3a5a8",bg:"#e3ebe5",rev:"Ночью захлопнулась дверь, приехал быстро и сделал всё без повреждений.",by:"Татьяна, мама Артёма"},
+{n:"Артём Белов",age:27,jobs:["Маляр","Отделка","Клейка обоев"],exp:"5 лет",edu:"Строительный колледж",skin:"#f5e0d4",hair:"#2f2623",bg:"#f0ddd5",rev:"Освежил детскую за выходные. Получилось чисто и красиво.",by:"Евгения, мама Вари"}];
+
+function avatar(p){return '<svg viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" fill="'+p.bg+'"/><path d="M14 100c0-24 15-34 36-34s36 10 36 34z" fill="#34554a"/><rect x="43" y="52" width="14" height="16" rx="6" fill="'+p.skin+'"/><ellipse cx="50" cy="40" rx="17" ry="19" fill="'+p.skin+'"/><path d="M32 40c-2-18 10-26 20-25 12 1 19 10 16 25-4-8-10-12-18-12s-14 4-18 12z" fill="'+p.hair+'"/><circle cx="43" cy="42" r="1.8" fill="#3a2f2b"/><circle cx="57" cy="42" r="1.8" fill="#3a2f2b"/><path d="M44 50q6 5 12 0" stroke="#b5776a" stroke-width="2" fill="none" stroke-linecap="round"/></svg>'}
+function card(p,isMen){
+var tags=isMen?'<div class="tags">'+p.jobs.map(function(j){return '<span class="tag">'+j+'</span>'}).join('')+'</div>':'';
+return '<article class="card"><div class="who">'+avatar(p)+'<div><h3>'+p.n+'</h3><small>'+p.age+' '+(p.age%10===1&&p.age!==11?'год':(p.age%10>1&&p.age%10<5&&(p.age<10||p.age>20)?'года':'лет'))+'</small></div></div>'+tags+
+'<dl><dt>Опыт</dt><dd>'+p.exp+'</dd><dt>'+(isMen?'Обучение':'Учёба')+'</dt><dd>'+p.edu+'</dd></dl>'+
+'<blockquote class="review"><span class="stars" aria-label="5 из 5">★★★★★</span><br>«'+p.rev+'»<cite>'+p.by+'</cite></blockquote></article>'}
+document.getElementById('nannyGrid').innerHTML=nannies.map(function(p){return card(p,false)}).join('');
+document.getElementById('menGrid').innerHTML=men.map(function(p){return card(p,true)}).join('');
+
+// placeholder QR
+(function(){var s=document.getElementById('qr'),h='<rect width="29" height="29" fill="#fff"/>',seed=7;
+function r(){seed=(seed*9301+49297)%233280;return seed/233280}
+function finder(x,y){return '<rect x="'+x+'" y="'+y+'" width="7" height="7" fill="#27342f"/><rect x="'+(x+1)+'" y="'+(y+1)+'" width="5" height="5" fill="#fff"/><rect x="'+(x+2)+'" y="'+(y+2)+'" width="3" height="3" fill="#27342f"/>'}
+for(var y=0;y<29;y++)for(var x=0;x<29;x++){var inF=(x<9&&y<9)||(x>19&&y<9)||(x<9&&y>19);if(!inF&&r()>.52)h+='<rect x="'+x+'" y="'+y+'" width="1" height="1" fill="#27342f"/>'}
+s.innerHTML=h+finder(1,1)+finder(21,1)+finder(1,21)})();
+
+// auth (данные хранятся в браузере)
+var mode='login',editing=false,accBox=document.getElementById('accBox');
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function ageWord(n){n=+n;if(n===0)return 'до 1 года';var a=n%100,b=n%10;return n+' '+((a>10&&a<15)?'лет':b===1?'год':(b>1&&b<5)?'года':'лет')}
+var LS={get:function(k){try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}},set:function(k,v){try{localStorage.setItem(k,JSON.stringify(v));return true}catch(e){return false}}};
+function hex(b){return Array.prototype.map.call(new Uint8Array(b),function(x){return ('0'+x.toString(16)).slice(-2)}).join('')}
+async function hashPw(pw,salt){var s=salt+pw;if(window.crypto&&crypto.subtle){return hex(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s)))}var h=5381;for(var i=0;i<s.length;i++)h=((h<<5)+h+s.charCodeAt(i))|0;return 'x'+h}
+function rnd(){var a=new Uint8Array(8);if(window.crypto&&crypto.getRandomValues)crypto.getRandomValues(a);else for(var i=0;i<8;i++)a[i]=Math.random()*256;return hex(a)}
+function me(){var e=LS.get('om_session'),u=LS.get('om_users')||{};return e&&u[e]?{email:e,rec:u[e]}:null}
+function updLabel(){document.getElementById('accLabel').textContent=me()?'Кабинет':'Войти'}
+function field(l,n,t,v,x){return '<label class="f">'+l+'<input name="'+n+'" type="'+t+'" value="'+esc(v==null?'':v)+'" '+(x||'')+' required></label>'}
+function kidRow(v){return '<div class="kid"><label class="f">Возраст ребёнка<input name="kid" type="number" min="0" max="17" value="'+esc(v==null?'':v)+'" required></label><button type="button" class="x" data-act="rmkid" aria-label="Убрать ребёнка">×</button></div>'}
+function profFields(p){p=p||{};var k=p.kids&&p.kids.length?p.kids:[''];return '<div class="row2">'+field('Имя','first','text',p.first,'autocomplete="given-name"')+field('Фамилия','last','text',p.last,'autocomplete="family-name"')+'</div>'+field('Возраст мамы','mAge','number',p.mAge,'min="16" max="80"')+'<div id="kids">'+k.map(kidRow).join('')+'</div><button type="button" class="btn ghost small" data-act="addkid">+ Добавить ребёнка</button>'}
+function readProfile(f){var fd=new FormData(f),p={first:fd.get('first').trim(),last:fd.get('last').trim(),mAge:+fd.get('mAge'),kids:fd.getAll('kid').map(Number)};
+if(!p.first||!p.last)return {err:'Укажите имя и фамилию.'};
+if(!(p.mAge>=16&&p.mAge<=80))return {err:'Возраст мамы: от 16 до 80 лет.'};
+if(p.kids.some(function(k){return !(k>=0&&k<=17)}))return {err:'Возраст ребёнка: от 0 до 17 лет.'};
+return {p:p}}
+function renderAccount(){var m=me();updLabel();
+if(!m){accBox.innerHTML='<div class="tabs"><button type="button" data-mode="login" aria-pressed="'+(mode==='login')+'">Вход</button><button type="button" data-mode="reg" aria-pressed="'+(mode==='reg')+'">Регистрация</button></div>'+(mode==='login'?'<form id="loginForm">'+field('Почта','email','email','','autocomplete="email"')+field('Пароль','pw','password','','autocomplete="current-password"')+'<p class="err" role="alert"></p><button class="btn">Войти</button></form>':'<form id="regForm">'+profFields()+field('Почта','email','email','','autocomplete="email"')+field('Пароль (от 6 символов)','pw','password','','minlength="6" autocomplete="new-password"')+'<p class="err" role="alert"></p><button class="btn">Создать кабинет</button></form>');return}
+var p=m.rec.profile;
+if(editing){accBox.innerHTML='<form id="profForm"><h3>Редактирование данных</h3>'+profFields(p)+'<p class="err" role="alert"></p><div class="acts"><button class="btn">Сохранить</button><button type="button" class="btn ghost" data-act="cancel">Отмена</button></div></form>';return}
+accBox.innerHTML='<div class="profile"><div class="ava">'+esc((p.first[0]+p.last[0]).toUpperCase())+'</div><div><h3>'+esc(p.first)+' '+esc(p.last)+'</h3><small>'+esc(m.email)+'</small></div></div><dl class="pd"><dt>Имя</dt><dd>'+esc(p.first)+'</dd><dt>Фамилия</dt><dd>'+esc(p.last)+'</dd><dt>Возраст мамы</dt><dd>'+ageWord(p.mAge)+'</dd><dt>'+(p.kids.length>1?'Дети':'Ребёнок')+'</dt><dd>'+p.kids.map(ageWord).join(', ')+'</dd></dl><div class="acts"><button class="btn" data-act="edit">Редактировать</button><button class="btn ghost" data-act="logout">Выйти</button></div><p class="note">Данные сохраняются только в этом браузере.</p>'}
+accBox.addEventListener('click',function(e){var t=e.target.closest('[data-mode],[data-act]');if(!t)return;
+if(t.dataset.mode){mode=t.dataset.mode;renderAccount();return}
+var a=t.dataset.act;
+if(a==='addkid')document.getElementById('kids').insertAdjacentHTML('beforeend',kidRow(''));
+else if(a==='rmkid'){if(document.getElementById('kids').children.length>1)t.parentNode.remove()}
+else if(a==='edit'){editing=true;renderAccount()}
+else if(a==='cancel'){editing=false;renderAccount()}
+else if(a==='logout'){LS.set('om_session',null);editing=false;mode='login';renderAccount()}});
+accBox.addEventListener('submit',async function(e){e.preventDefault();var f=e.target,err=f.querySelector('.err'),fd=new FormData(f),users=LS.get('om_users')||{};
+function fail(t){err.textContent=t}
+if(f.id==='loginForm'){var em=fd.get('email').trim().toLowerCase(),u=users[em];
+if(!u||await hashPw(fd.get('pw'),u.salt)!==u.hash)return fail('Неверная почта или пароль.');
+LS.set('om_session',em);renderAccount()}
+else if(f.id==='regForm'){var r=readProfile(f);if(r.err)return fail(r.err);var e2=fd.get('email').trim().toLowerCase();
+if(users[e2])return fail('Эта почта уже зарегистрирована. Выберите вкладку «Вход».');
+var salt=rnd();users[e2]={salt:salt,hash:await hashPw(fd.get('pw'),salt),profile:r.p};
+if(!LS.set('om_users',users)||!LS.set('om_session',e2))return fail('Браузер не позволяет сохранить данные.');
+renderAccount()}
+else if(f.id==='profForm'){var r2=readProfile(f);if(r2.err)return fail(r2.err);var m=me();users[m.email].profile=r2.p;LS.set('om_users',users);editing=false;renderAccount()}});
+
+// navigation
+var views=['home','nanny','men','chat','account'];
+function show(id){if(views.indexOf(id)<0)id='home';
+views.forEach(function(v){document.getElementById(v).hidden=v!==id});
+document.querySelectorAll('nav button, .acc').forEach(function(b){if(b.dataset.go===id)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')});
+if(id==='account')renderAccount();else updLabel();window.scrollTo(0,0)}
+document.querySelectorAll('[data-go]').forEach(function(b){b.addEventListener('click',function(){var id=b.dataset.go;if(location.hash!=='#'+id)location.hash=id;else show(id)})});
+window.addEventListener('hashchange',function(){show(location.hash.slice(1))});
+show(location.hash.slice(1));
+</script>
+</body>
+</html>
